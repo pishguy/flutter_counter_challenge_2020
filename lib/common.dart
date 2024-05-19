@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 
 class CounterText extends StatelessWidget {
   const CounterText({
-    Key key,
-    @required this.counter,
+    Key? key,
+    required this.counter,
   }) : super(key: key);
 
   final int counter;
@@ -19,20 +19,20 @@ class CounterText extends StatelessWidget {
         children: <Widget>[
           Text(
             'You have pushed the button this many times:',
-            style: Theme.of(context).textTheme.bodyText1.copyWith(
-                  foreground: Paint()
-                    ..blendMode = BlendMode.difference
-                    ..color = Colors.white,
-                ),
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              foreground: Paint()
+                ..blendMode = BlendMode.difference
+                ..color = Colors.white,
+            ),
           ),
           Text(
             '$counter',
-            style: Theme.of(context).textTheme.headline2.copyWith(
-                  // Comment on web.
-                  foreground: Paint()
-                    ..blendMode = BlendMode.difference
-                    ..color = Colors.white,
-                ),
+            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              // Comment on web.
+              foreground: Paint()
+                ..blendMode = BlendMode.difference
+                ..color = Colors.white,
+            ),
           ),
         ],
       ),
@@ -63,9 +63,9 @@ extension RandomExtension on Random {
 
 class Pixels {
   const Pixels({
-    @required this.byteData,
-    @required this.width,
-    @required this.height,
+    required this.byteData,
+    required this.width,
+    required this.height,
   });
 
   final ByteData byteData;
